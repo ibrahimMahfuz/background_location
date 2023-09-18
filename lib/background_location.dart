@@ -24,7 +24,7 @@ class BackgroundLocation {
   }
 
   static setAndroidNotification(
-      {String? title, String? message, String? icon}) async {
+      {String title, String message, String icon}) async {
     if (Platform.isAndroid) {
       return await _channel.invokeMethod('set_android_notification',
           <String, dynamic>{'title': title, 'message': message, 'icon': icon});
@@ -90,14 +90,14 @@ class BackgroundLocation {
 
 /// about the user current location
 class Location {
-  double? latitude;
-  double? longitude;
-  double? altitude;
-  double? bearing;
-  double? accuracy;
-  double? speed;
-  double? time;
-  bool? isMock;
+  double latitude;
+  double longitude;
+  double altitude;
+  double bearing;
+  double accuracy;
+  double speed;
+  double time;
+  bool isMock;
 
   Location(
       {@required this.longitude,
